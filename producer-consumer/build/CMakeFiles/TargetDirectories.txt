@@ -1,0 +1,3 @@
+/home/qwkl/Downloads/producer-consumer/build/CMakeFiles/producer-consumer.dir
+/home/qwkl/Downloads/producer-consumer/build/CMakeFiles/edit_cache.dir
+/home/qwkl/Downloads/producer-consumer/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/cc "CMakeFiles/producer-consumer.dir/template.c.o" -o producer-consumer   -L/home/qwkl/Downloads/producer-consumer  -Wl,-rpath,/home/qwkl/Downloads/producer-consumer -lpqueue 

@@ -51,7 +51,7 @@ void producer(pid_t childPid) {
         qunserialize(&queue, sizeof(item), filename);
 
         if (countItemsInStock(queue) >= 5) {
-      		printf("Brak miejsca w magazynie. Zaniechano produkcji.\n");
+      		printf("Production stopped, not enoguh place in the warehouse.\n");
       		free(it);
             flock(fd, LOCK_UN);
             close(fd);
@@ -65,7 +65,7 @@ void producer(pid_t childPid) {
         flock(fd, LOCK_UN);
         close(fd);
 
-        printf("PRODUCER: Wyprodukowano bułkę o ID: %d\n", it->id);
+        printf("PRODUCER: Produced a product with ID: %d\n", it->id);
     }
 }
 
@@ -83,12 +83,12 @@ void consumer() {
           	pqueue *node = qpop(&queue);
         	if (node != NULL) {
             	item* it = (item*)node->data;
-            	printf("KONSUMENT: Kupiono bułkę o ID: %d\n", it->id);
+            	printf("CONSUMER: Bought the product with ID: %d\n", it->id);
 
             	if(it) free(it);
             	free(node);
         	} else {
-            	printf("KONSUMENT: Zabrakło kolejnej bułki!\n");
+            	printf("CONSUMER: Lack of a product!\n");
             }
         }
 
